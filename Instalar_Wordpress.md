@@ -62,3 +62,33 @@ Para comprobar si esta instalado
 systemctl status mysql
 ```
 ![image](https://user-images.githubusercontent.com/91255763/204375487-df023bc2-9712-4107-b90d-8b8d49bff650.png)
+
+## Instalar PHP
+Para instalar php se introducen los siguiente coamndo
+```bash
+$ apt install php libapache2-mod-php php-mysql
+``` 
+En la mayoría de los casos, desearás modificar la forma mediante la cual Apache sirve archivos cuando un directorio es solicitado. En este momento, si un usuario solicita un directorio del servidor, Apache buscará, en primera instancia, un archivo llamado index.html. Nosotros queremos que el servidor web le dé prelación a los archivos PHP sobre cualquier otro archivo. Para lo cual haremos que el Apache busque el archivo index.php en primer lugar.
+
+```bash
+$ nano /etc/apache/mods-enabled/dir.conf
+```
+Su aspecto inicial es el siguiente
+![image](https://user-images.githubusercontent.com/91255763/204391170-790abf86-a1fc-4318-b84d-3d1b221c762d.png)
+
+Pero debemos modificarlo para que tenga el siguiente
+
+![image](https://user-images.githubusercontent.com/91255763/204391339-6a2b0756-77a2-4567-98bb-d7705f6f7ce8.png)
+
+Y debemos reiniciar apache
+
+```bash
+$ systemctl restart apache2
+```
+y debemos comprobar el estado de apache2 con:
+
+```bash
+$ systemctl status apache2
+```
+![image](https://user-images.githubusercontent.com/91255763/204391812-fddd3e6a-3b92-4926-a9cb-6b2837abcf05.png)
+Con esto ya esta instalado php.
