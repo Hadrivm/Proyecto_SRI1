@@ -92,3 +92,40 @@ $ systemctl status apache2
 ```
 ![image](https://user-images.githubusercontent.com/91255763/204391812-fddd3e6a-3b92-4926-a9cb-6b2837abcf05.png)
 Con esto ya esta instalado php.
+## Wordpress
+Para instalar wordpress primero debemos decargar los archivos de wordpres desde la pagina oficial
+![image](https://user-images.githubusercontent.com/91255763/204392942-3a4c5bcf-727d-4c6d-ad2d-03e9cb4d6fdd.png)
+Ahora debemos hacer ciertas configuraciones en apache2 para poder hacer un sitio funcional con wordpress.
+### Crear un virtual host
+Para esto debemos crear un archivo de configuración de apache2 dentro de la carpeta sites-available de apache2 con el siguiente comando:
+```bash
+$ mkdir /etc/apache2/sites-available/centro.intranet.conf
+```
+Debemos editarlo y para ello 
+```bash
+$ nano /etc/apache2/sites-available/centro.intranet.conf
+```
+Dentro de este fichero debemos escribir lo siguiente
+```apache2
+<VirtualHost *:80>
+    ServerName centro.intranet
+    ServerAlias www.centro.intranet
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/centro.intranet
+    Errorlog ${APACHE_LOG_DIR}error.log
+    Customlog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+´´´
+Ahora debemos habilitar los nuevos archivos de host virtual y deshabilitar el prederminado con el siguiente comando:
+```bash
+$ aen2site centro.ntranet.conf
+$ e2dissite 000-defult.conf
+```
+Ahora debemos reiniciar apache2
+```bash
+$ systemctl restart apache2
+$ systemctl status apache2
+```
+Ahora debemos asignar a www.centro.intranet la misma ip que a centro.intranet en el fichero hosts de /etc
+
+
