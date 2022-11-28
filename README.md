@@ -1,7 +1,8 @@
 # Proyecto_SRI1
 Repositorio donde se almacena el proyecto de primer trimestre del modulo SRI
 ## Servidor con wordpress
-Lo primero antes de empezar es instalar php, mysql, apache2, es decir tener LAMP, suponemos que ya tenemos la maquina linux sin apache ni php ni mysql, lo primero que tenemos que hacer es instalar apache como super usuario, y actualizarlo para esto:
+Lo primero antes de empezar es instalar php, mysql, apache2, es decir tener LAMP, suponemos que ya tenemos la maquina linux sin apache ni php ni mysql.
+### Instalación de Apache
 ```bash
 $ sudo su
 $ apt update
@@ -52,7 +53,7 @@ $ cd /etc
 $ nano hosts
 ```
 y cuando lo terminemos de editar ctrl+o y ctrl+x
-
+### Instalación de Mysql
 Ahora debemos instalar Mysql, para ello:
 ```bash
 $ apt update
@@ -63,6 +64,8 @@ Para comprobar si esta instalado
 systemctl status mysql
 ```
 ![image](https://user-images.githubusercontent.com/91255763/204375487-df023bc2-9712-4107-b90d-8b8d49bff650.png)
+
+
 
 
 
