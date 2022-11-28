@@ -10,6 +10,7 @@ Para comprobar que se ha instalado debemos hacer systemctl status apache2
 $ systemctl status apache2
 ```
 ![image](https://user-images.githubusercontent.com/91255763/204372625-2ecbcc3b-ca82-4ea9-9aa0-a7203bfa854c.png)
+
 Ahora debemos ajustar el cortafuegos para permitir el tráfico web:
 ```bash
 $ ufw app list
@@ -31,9 +32,9 @@ y cuando lo terminemos de editar ctrl+o y ctrl+x
 
 
 Para comrpobar que funciona nos movemos al navegador y escribimos 
-
+```bash
 http://ip_del_server
-
+```
 ![image](https://user-images.githubusercontent.com/91255763/204378218-54848d7a-9c7f-4683-a55f-3895f5c0d849.png)
 
 Ahora que tenemos apache debemos crear el directorio para centro.intranet, para ello debemos movernos a la carpeta www de apache2:
