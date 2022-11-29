@@ -145,4 +145,17 @@ Ahora debemos asignar a www.centro.intranet la misma ip que a centro.intranet en
 
 ![image](https://user-images.githubusercontent.com/91255763/204397729-e36ed0f2-e489-425d-8326-5c4006c49e18.png)
 
+Para comprobar que funciona podemos crear un fichero index.html en /var/www/centro.intranet:
+
+```bash
+$ nano /var/www/centro.intranet
+````
+
+![image](https://user-images.githubusercontent.com/91255763/204467462-aba78677-4d50-4dd4-951b-667dd1204e5f.png)
+
+
+![image](https://user-images.githubusercontent.com/91255763/204467564-2fe36eaf-53f6-4b3c-be28-1ec067c15d2a.png)
+
+
+
 
