@@ -29,7 +29,7 @@ $ cd/etc
 $ nano hosts
 y cuando lo terminemos de editar ctrl+o y ctrl+x
 ```
-![image](https://user-images.githubusercontent.com/91255763/204378081-a3392769-9dce-4b38-a520-906a0ef829f7.png)
+![image](https://user-images.githubusercontent.com/91255763/204559096-d9429bf5-78c8-4971-928c-162d4ca3ddfb.png)
 
 
 Para comprobar que funciona nos movemos al navegador y escribimos 
@@ -41,10 +41,10 @@ http://ip_del_server
 Ahora que tenemos apache debemos crear el directorio para departamentos.centro.intranet, para ello debemos movernos a la carpeta /www de apache2:
 
 ```bash
-$ mkdir /var/www/departamanetos.centro.intranet
-$ ls /var/www
+$ mkdir /var/www/html/departamanetos.centro.intranet
+$ ls /var/www/html
 ```
-![image](https://user-images.githubusercontent.com/91255763/204498445-6d956795-0353-4695-97fb-270f17ab36f1.png)
+![image](https://user-images.githubusercontent.com/91255763/204560290-73b5f451-7bfd-420c-b252-9da2b70e5e7b.png)
 
 Y le  asignamos una ip a departamentos.centro.intranet de la misma manera que la revisamos antes:
 
@@ -53,6 +53,20 @@ $ cd /etc
 $ nano hosts
 ```
 y cuando lo terminemos de editar ctrl+o y ctrl+x
+Para que el sitio sea visible debermos crear un virtual host en el fichero sites-available de /etc/apache2
+```bash 
+$ nano /etc/apache2/sites-available/departamentos.centro.intranet.conf
+```
+```apache2
+<VirtualHost *:80>
+    ServerName departamentos.centro.intranet
+    ServerAlias www.departamentos.centro.intranet
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/departamentos.centro.intranet
+    Errorlog ${APACHE_LOG_DIR}error.log
+    Customlog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
 ### Instalación de Mysql
 Ahora debemos instalar Mysql, para ello:
 ```bash
