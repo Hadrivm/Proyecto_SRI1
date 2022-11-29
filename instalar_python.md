@@ -152,6 +152,10 @@ $ mkdir /var/www/html/departementos.centro.intranet/logs
 ```
 Debemos crear un controlador para la aplicación ya que todas las peticiones realizadas por el usuario (es decir, las URL a las cuáles el usuario acceda por el navegador), serán manejadas por un único archivo, que estará almacenado en nuestro directorio mypythonapp.
 
+```bash
+$ echo '# -*- coding: utf-8 -*-' > mypythonapp/controller.py
+``` 
+
 Ahora deberomos modificar el virtual host que creamos antes para que quede de la siguinete manera:
 
 ```bash
@@ -161,18 +165,15 @@ Ahora deberomos modificar el virtual host que creamos antes para que quede de la
     ServerAdmin webmaster@localhost
     DocumentRoot /var/www/html/departamentos.centro.intranet
     WSGIScriptAlias /var/www/html/departamentos.centro.intranet/controller.py 
-    Errorlog ${APACHE_LOG_DIR}error.log
-    Customlog ${APACHE_LOG_DIR}/access.log combined
+    Errorlog /var/www/html/departamentos.centro.intranet/logs/error.log
+    Customlog /var/www/html/departamentos.centro.intranet/logs/access.log combined
+     <Directory /> 
+    Options FollowSymLinks 
+    AllowOverride All 
+  </Directory> 
 </VirtualHost>
 ```
-Hemos añadido 
-```bash
- WSGIScriptAlias /var/www/html/departamentos.centro.intranet/controller.py
- ```
- 
-```bash
-$ echo '# -*- coding: utf-8 -*-' > mypythonapp/controller.py
-``` 
 
+![image](https://user-images.githubusercontent.com/91255763/204606251-0f9d95d3-09b6-4266-a823-55e4ca8520b7.png)
 
 https://uniwebsidad.com/libros/python/capitulo-13/python-bajo-apache
