@@ -11,6 +11,7 @@ Vamos a instalar un servidor web interno para un instituto. Se Pide:
 - Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
 
 ## [Servidor con wordpress ](/Instalar_Wordpress.md)
+En este ejericicio se recoges las instrucciones para crear un servidor apache que sirve la información con wordpress y la activación de los modulos para ejecutar php y acceder a mysql
 ## [Servidor con python ](/instalar_python.md)
 ## [Segundo servidor](/Segundo_servidor.md)
 
