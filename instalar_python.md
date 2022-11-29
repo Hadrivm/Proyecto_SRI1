@@ -129,4 +129,31 @@ $ systemctl status apache2
 
 Con esto ya esta instalado php.
 
+## Preparaciones
+Para poder usar una aplicación pythin en el servidor primero debemos instalar un modificador para apache
+```bash
+$ apt-get install libapache2-mod-wsgi
+```
+
+Ahora en el directorio de departamentos.centri.intranet debemis crear otros 2,  mypythonapp y public_html, una almacenara la aplicación python y la otra servira a la aplicación
+
+```bash
+$ mkdir /var/www/html/departementos.centro.intranet/mypythonapp
+$ mkdir /var/www/html/departementos.centro.intranet/public_html
+``` 
+![image](https://user-images.githubusercontent.com/91255763/204596640-31f26c18-da5a-4360-9016-c4923f2bd66c.png)
+
+Desde mypythonapp almacenaremos todoa los modilos y paquetes de nuetsra aplicaion en python mientras que public_html almacenra los archivos estatticos y sera el unico directorio al que se pueds acceder mediante el navegador web. 
+
+Aprovecharemos este paso, para crear una carpeta, destinada a almacenar los logs de errores y accesos a nuestra Web App:
+
+```bash
+$ mkdir /var/www/html/departementos.centro.intranet/logs
+```
+Debemos craer un contralor para la plicación ya que todas las peticiones realizadas por el usuario (es decir, las URI a las cuáles el usuario acceda por el navegador), serán manejadas por un único archivo, que estará almacenado en nuestro directorio mypythonapp.
+
+```bash
+$ echo '# -*- coding: utf-8 -*-' > mypythonapp/controller.py
+``` 
+
 
