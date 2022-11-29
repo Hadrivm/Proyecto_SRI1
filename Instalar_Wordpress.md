@@ -1,4 +1,4 @@
-### Instalación de Apache
+### Instalar Apache
 Para instalar apache debemos primero estar en modo sudo su:
 ```bash
 $ sudo su
