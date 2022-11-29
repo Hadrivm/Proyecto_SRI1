@@ -36,7 +36,7 @@ Para comprobar que funciona nos movemos al navegador y escribimos
 ```bash
 http://ip_del_server
 ```
-![image](https://user-images.githubusercontent.com/91255763/204378218-54848d7a-9c7f-4683-a55f-3895f5c0d849.png)
+![image](https://user-images.githubusercontent.com/91255763/204578733-e59e1e66-24c6-4623-a86c-8a60650e9a3d.png)
 
 Ahora que tenemos apache debemos crear el directorio para departamentos.centro.intranet, para ello debemos movernos a la carpeta /www de apache2:
 
@@ -46,13 +46,17 @@ $ ls /var/www/html
 ```
 ![image](https://user-images.githubusercontent.com/91255763/204560290-73b5f451-7bfd-420c-b252-9da2b70e5e7b.png)
 
-Y le  asignamos una ip a departamentos.centro.intranet de la misma manera que la revisamos antes:
+Y le  asignamos una ip a departamentos.centro.intranet y a www.departamentos.centro.intranet  de la misma manera que la revisamos antes:
 
 ```bash
 $ cd /etc
 $ nano hosts
 ```
 y cuando lo terminemos de editar ctrl+o y ctrl+x
+
+![image](https://user-images.githubusercontent.com/91255763/204578502-b1d47218-fe71-46ce-8502-6c4980389d93.png)
+
+
 Para que el sitio sea visible debermos crear un virtual host en el fichero sites-available de /etc/apache2
 ```bash 
 $ nano /etc/apache2/sites-available/departamentos.centro.intranet.conf
@@ -62,7 +66,7 @@ $ nano /etc/apache2/sites-available/departamentos.centro.intranet.conf
     ServerName departamentos.centro.intranet
     ServerAlias www.departamentos.centro.intranet
     ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/departamentos.centro.intranet
+    DocumentRoot /var/www/html/departamentos.centro.intranet
     Errorlog ${APACHE_LOG_DIR}error.log
     Customlog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
@@ -72,6 +76,11 @@ Después debemos dar de alta el sitio con
 ```bash
 $ a2ensite departamentos.centro.intranet
 ```
+si queremos comprobar que el sitio existe vamos al navegador y escribimos www.departamentos.centro.intranet 
+
+![image](https://user-images.githubusercontent.com/91255763/204577842-399c5b04-251f-4978-adc4-98726523704b.png)
+
+
 ### Instalación de Mysql
 Ahora debemos instalar Mysql, para ello:
 ```bash
