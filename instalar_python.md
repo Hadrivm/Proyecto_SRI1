@@ -160,11 +160,16 @@ Ahora deberomos modificar el virtual host que creamos antes para que quede de la
     ServerAlias www.departamentos.centro.intranet
     ServerAdmin webmaster@localhost
     DocumentRoot /var/www/html/departamentos.centro.intranet
-   * WSGIScriptAlias /var/www/html/departamentos.centro.intranet/controller.py *
+    WSGIScriptAlias /var/www/html/departamentos.centro.intranet/controller.py 
     Errorlog ${APACHE_LOG_DIR}error.log
     Customlog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-
+```
+Hemos añadido 
+```bash
+ WSGIScriptAlias /var/www/html/departamentos.centro.intranet/controller.py
+ ```
+ 
 ```bash
 $ echo '# -*- coding: utf-8 -*-' > mypythonapp/controller.py
 ``` 
