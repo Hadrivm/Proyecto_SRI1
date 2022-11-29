@@ -29,14 +29,17 @@ $ cd/etc
 $ nano hosts
 y cuando lo terminemos de editar ctrl+o y ctrl+x
 ```
-![image](https://user-images.githubusercontent.com/91255763/204559096-d9429bf5-78c8-4971-928c-162d4ca3ddfb.png)
+![image](https://user-images.githubusercontent.com/91255763/204579317-a1a53500-7292-4a21-814d-3ade1d83ed1c.png)
+
 
 
 Para comprobar que funciona nos movemos al navegador y escribimos 
 ```bash
-http://ip_del_server
+http://ip_de_localhost
 ```
-![image](https://user-images.githubusercontent.com/91255763/204578733-e59e1e66-24c6-4623-a86c-8a60650e9a3d.png)
+
+![image](https://user-images.githubusercontent.com/91255763/204579694-8518ac55-a687-4f3b-bfb1-f393213e7eb3.png)
+
 
 Ahora que tenemos apache debemos crear el directorio para departamentos.centro.intranet, para ello debemos movernos a la carpeta /www de apache2:
 
@@ -76,7 +79,7 @@ Después debemos dar de alta el sitio con
 ```bash
 $ a2ensite departamentos.centro.intranet
 ```
-si queremos comprobar que el sitio existe vamos al navegador y escribimos www.departamentos.centro.intranet 
+si queremos comprobar que el sitio existe vamos al navegador y escribimos http://www.departamentos.centro.intranet o http://departamentos.centro.intranet 
 
 ![image](https://user-images.githubusercontent.com/91255763/204577842-399c5b04-251f-4978-adc4-98726523704b.png)
 
