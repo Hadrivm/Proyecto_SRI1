@@ -143,14 +143,14 @@ $ mkdir /var/www/html/departementos.centro.intranet/public_html
 ``` 
 ![image](https://user-images.githubusercontent.com/91255763/204596640-31f26c18-da5a-4360-9016-c4923f2bd66c.png)
 
-Desde mypythonapp almacenaremos todoa los modilos y paquetes de nuetsra aplicaion en python mientras que public_html almacenra los archivos estatticos y sera el unico directorio al que se pueds acceder mediante el navegador web. 
+Desde mypythonapp almacenaremos todoa los modulos y paquetes de nueestra aplicación en python mientras que public_html almacenara los archivos estaticos y sera el unico directorio al que se pueda acceder mediante el navegador web. 
 
 Aprovecharemos este paso, para crear una carpeta, destinada a almacenar los logs de errores y accesos a nuestra Web App:
 
 ```bash
 $ mkdir /var/www/html/departementos.centro.intranet/logs
 ```
-Debemos craer un contralor para la plicación ya que todas las peticiones realizadas por el usuario (es decir, las URI a las cuáles el usuario acceda por el navegador), serán manejadas por un único archivo, que estará almacenado en nuestro directorio mypythonapp.
+Debemos crear un controlador para la aplicación ya que todas las peticiones realizadas por el usuario (es decir, las URL a las cuáles el usuario acceda por el navegador), serán manejadas por un único archivo, que estará almacenado en nuestro directorio mypythonapp.
 
 ```bash
 $ echo '# -*- coding: utf-8 -*-' > mypythonapp/controller.py
