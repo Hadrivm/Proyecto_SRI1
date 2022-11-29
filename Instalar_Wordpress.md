@@ -130,8 +130,8 @@ Dentro de este fichero debemos escribir lo siguiente
 Ahora debemos habilitar los nuevos archivos de host virtual y deshabilitar el prederminado con el siguiente comando:
 
 ```bash
-$ aen2site centro.intranet.conf
-$ e2dissite 000-defult.conf
+$ a2ensite centro.intranet.conf
+$ a2endissite 000-defult.conf
 ```
 ![image](https://user-images.githubusercontent.com/91255763/204397945-50a09794-6d37-4e3e-8ac8-fb548e0a425f.png)
 
