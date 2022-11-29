@@ -67,6 +67,11 @@ $ nano /etc/apache2/sites-available/departamentos.centro.intranet.conf
     Customlog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
+Después debemos dar de alta el sitio con 
+
+```bash
+$ a2ensite departamentos.centro.intranet
+```
 ### Instalación de Mysql
 Ahora debemos instalar Mysql, para ello:
 ```bash
