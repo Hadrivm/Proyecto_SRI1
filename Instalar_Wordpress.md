@@ -196,10 +196,30 @@ Como podemos ver los permisos a la carpeta han cambiado.
 Ahora debemos crear una base de datos en mysql para wordpress, agrtegar un usuario y garantizarle todos los privilegios
 
 ```bash
-$ mysql
+$ mysql -u root -p
 ```
 ```sql
-$ create database worpdress
+$ create database worpdress;
 ```
+```sql
+$ create user 'wordpressuser'@'localhost' identified by 'wordpressuser';
+$ grant all privileges on wordpress*. to 'wordpressuser'@'localhost';
+```
+Con esto ya tendriamos la base de datos y el usuario para wordpress.
+Buscamos en el navegador www.centro.intranet/ y debera aparecernos la pagina de wordpress
+
+![image](https://user-images.githubusercontent.com/91255763/204495482-abc97c5f-f86b-4d29-8085-dee14c9ff6a0.png)
+
+Solo nos queda introoducir las credenciales del usuario que hemos creado
+
+![image](https://user-images.githubusercontent.com/91255763/204496126-ddf96b36-ac84-4dd0-b3ab-5a7080926808.png)
+
+![image](https://user-images.githubusercontent.com/91255763/204496869-91de3552-0387-4e21-8f0c-5e6d69a63bcd.png)
+![image](https://user-images.githubusercontent.com/91255763/204496944-90338a2f-42ce-4998-bbf3-7db739ea8492.png)
+![image](https://user-images.githubusercontent.com/91255763/204497058-ff8714e8-4ee5-407f-8fb6-0705e2314dd4.png)
+
+
+
+
 
 
