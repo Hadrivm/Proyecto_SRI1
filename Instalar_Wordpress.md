@@ -157,5 +157,49 @@ $ nano /var/www/centro.intranet
 ![image](https://user-images.githubusercontent.com/91255763/204467564-2fe36eaf-53f6-4b3c-be28-1ec067c15d2a.png)
 
 
+Con las preparaciones hechas solo nos queda instalar wordpress.
+Ya tenemos el .zip de wordpress decargado y debemos descomprimirlo y mover el directorio resultante wordpress/ a la carpeta /var/www/centro.intranet:
+
+```bash
+$ unzip wordpress-6.1.1-es_ES.zip
+$ mv wordpress/ /var/www/centro.intranet
+$ cd /var/www/centro.intranet
+$ ls 
+```
+![image](https://user-images.githubusercontent.com/91255763/204488515-80c86906-cdb5-41fd-9847-a24d522d8e36.png)
+
+Después de moverlo debemos extraer el conrtenido de la carpeta  wordpress/ 
+
+```bash
+$ mv wordpress/* .
+$ ls
+```
+
+![image](https://user-images.githubusercontent.com/91255763/204488918-7d9efd38-2725-4f72-9b60-5cf321b3a8eb.png)
+
+Y debemos borrar el directorio wordpress/
+
+```bash
+$ rm -rf wordpress
+$ ls
+``` 
+Ahora debemos cambiar los permisos de la carpeta centro.intranet para esto:
+
+```bash 
+$ cd ..
+$ chown -R www-data:www-data centro.intranet
+$ ls -l
+```
+![image](https://user-images.githubusercontent.com/91255763/204490531-74ac3816-9020-426f-a405-d2adce2f7062.png)
+
+Como podemos ver los permisos a la carpeta han cambiado.
+Ahora debemos crear una base de datos en mysql para wordpress, agrtegar un usuario y garantizarle todos los privilegios
+
+```bash
+$ mysql
+```
+```sql
+$ create database worpdress
+```
 
 
